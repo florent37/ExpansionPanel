@@ -50,7 +50,6 @@ public class ExpansionLayout extends NestedScrollView {
         }
     }
 
-
     public void addListener(Listener listener) {
         if (listener != null && !listeners.contains(listener))
             listeners.add(listener);
@@ -169,7 +168,7 @@ public class ExpansionLayout extends NestedScrollView {
                     setHeight((Float) valueAnimator.getAnimatedValue());
                 }
             });
-            pingIndicatorListeners();
+            pingIndicatorListeners(false);
             valueAnimator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
@@ -188,10 +187,10 @@ public class ExpansionLayout extends NestedScrollView {
         }
     }
 
-    private void pingIndicatorListeners() {
+    private void pingIndicatorListeners(boolean willBeExpanded) {
         for (IndicatorListener indicatorListener : indicatorListeners) {
             if (indicatorListener != null) {
-                indicatorListener.onStartedExpand(this, !expanded);
+                indicatorListener.onStartedExpand(this, willBeExpanded);
             }
         }
     }
@@ -217,7 +216,7 @@ public class ExpansionLayout extends NestedScrollView {
                     setHeight((Float) valueAnimator.getAnimatedValue());
                 }
             });
-            pingIndicatorListeners();
+            pingIndicatorListeners(true);
             valueAnimator.addListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {

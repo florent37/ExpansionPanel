@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
+import com.github.florent37.expansionpanel.ExpansionLayoutCollection;
 
 import static florent37.github.com.expansionpanel.Utils.dpToPx;
 
@@ -30,11 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
         dynamicLayoutContainer = (ViewGroup)findViewById(R.id.dynamicLayoutContainer);
 
-        addDynamicLayout();
-        addDynamicLayout();
+        final ExpansionLayout ex1 = addDynamicLayout();
+        final ExpansionLayout ex2 = addDynamicLayout();
+
+        final ExpansionLayoutCollection expansionLayoutCollection = new ExpansionLayoutCollection();
+        expansionLayoutCollection.add(ex1).add(ex2);
+        expansionLayoutCollection.openOnlyOne(true);
     }
 
-    public void addDynamicLayout() {
+    public ExpansionLayout addDynamicLayout() {
 
         final ExpansionHeader expansionHeader = createExpansionHeader();
         dynamicLayoutContainer.addView(expansionHeader, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -43,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         dynamicLayoutContainer.addView(expansionLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         expansionHeader.setExpansionLayout(expansionLayout);
+
+        return expansionLayout;
 
     }
 

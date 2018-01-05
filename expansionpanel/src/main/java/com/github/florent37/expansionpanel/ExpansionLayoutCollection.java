@@ -8,10 +8,10 @@ public class ExpansionLayoutCollection {
     private final Collection<ExpansionLayout> expansions = new HashSet<>();
     private boolean openOnlyOne = false;
 
-    private final ExpansionLayout.Listener expansionListener = new ExpansionLayout.Listener() {
+    private final ExpansionLayout.IndicatorListener indicatorListener = new ExpansionLayout.IndicatorListener() {
         @Override
-        public void onExpansionChanged(ExpansionLayout expansionLayout, boolean expanded) {
-            if(expanded){
+        public void onStartedExpand(ExpansionLayout expansionLayout, boolean willExpand) {
+            if(willExpand){
                 for (ExpansionLayout view : expansions) {
                     if(view != expansionLayout){
                         view.collapse(true);
@@ -23,7 +23,7 @@ public class ExpansionLayoutCollection {
 
     public ExpansionLayoutCollection add(ExpansionLayout expansionLayout) {
         expansions.add(expansionLayout);
-        expansionLayout.addListener(expansionListener);
+        expansionLayout.addIndicatorListener(indicatorListener);
         return this;
     }
 
@@ -44,7 +44,7 @@ public class ExpansionLayoutCollection {
     public ExpansionLayoutCollection remove(ExpansionLayout expansionLayout) {
         if (expansionLayout != null) {
             expansions.remove(expansionLayout);
-            expansionLayout.removeListener(expansionListener);
+            expansionLayout.removeIndicatorListener(indicatorListener);
         }
         return this;
     }

@@ -83,6 +83,18 @@ Layout can be toggled programmatically with `.toggle()`
 
 Use `.setEnable(true/false)` to enable/disable the expansion
 
+# Open only one
+
+You can setup multiple expansions layout to enable only 1 opened at time
+
+```
+final ExpansionLayoutCollection expansionLayoutCollection = new ExpansionLayoutCollection();
+expansionLayoutCollection.add(ex1);
+expansionLayoutCollection.add(ex2);
+
+expansionLayoutCollection.openOnlyOne(true);
+```
+
 # Credits
 
 Author: Florent Champigny [http://www.florentchampigny.com/](http://www.florentchampigny.com/)
