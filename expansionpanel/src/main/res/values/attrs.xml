@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExpansionHeader">
+        <attr name="expansion_layout" format="reference"/>
+        <attr name="expansion_toggleOnClick" format="boolean"/>
+        <attr name="expansion_headerIndicator" format="reference"/>
+        <attr name="expansion_headerIndicatorRotationExpanded" format="reference"/>
+        <attr name="expansion_headerIndicatorRotationCollapsed" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="ExpansionLayout">
+        <attr name="expansion_expanded" format="boolean"/>
+    </declare-styleable>
+</resources>
