@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 layout.addView(child, ViewGroup.LayoutParams.MATCH_PARENT, 100);
             }
         });
+
+        layout.addView(LayoutInflater.from(this).inflate(R.layout.sample_panel, layout, false));
 
         return expansionLayout;
     }
