@@ -4,7 +4,7 @@ Expansion panels contain creation flows and allow lightweight editing of an elem
 Based on `Expansion Panels` described on Material Design Components 
 https://material.io/guidelines/components/expansion-panels.html#
 
-[![screen](https://raw.githubusercontent.com/florent37/ExpansionPanel/master/medias/components-expansion-panels.png)](https://www.github.com/florent37/ExpansionPanel)
+[![screen](https://raw.githubusercontent.com/florent37/ExpansionPanel/master/medias/material-components-expansion-panels.png)](https://www.github.com/florent37/ExpansionPanel)
 
 <a href="https://goo.gl/WXW8Dc">
   <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
