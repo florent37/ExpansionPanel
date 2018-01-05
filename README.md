@@ -10,7 +10,7 @@ https://material.io/guidelines/components/expansion-panels.html#
   <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
 </a>
 
-INSERT GIF HERE
+[![screen](https://raw.githubusercontent.com/florent37/EspansionPanels/master/medias/video1.gif)](https://www.github.com/florent37/EspansionPanels)
 
 # Download
 

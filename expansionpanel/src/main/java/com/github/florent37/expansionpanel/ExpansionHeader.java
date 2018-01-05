@@ -48,8 +48,8 @@ public class ExpansionHeader extends FrameLayout {
         if (attrs != null) {
             final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ExpansionHeader);
             if (a != null) {
-                headerRotationExpanded = a.getInt(R.styleable.ExpansionHeader_expansion_headerRorationExpanded, headerRotationExpanded);
-                headerRotationCollapsed = a.getInt(R.styleable.ExpansionHeader_expansion_headerRorationCollapsed, headerRotationCollapsed);
+                headerRotationExpanded = a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationExpanded, headerRotationExpanded);
+                headerRotationCollapsed = a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationCollapsed, headerRotationCollapsed);
                 headerIndicatorId = a.getResourceId(R.styleable.ExpansionHeader_expansion_headerIndicator, headerIndicatorId);
                 expansionLayoutId = a.getResourceId(R.styleable.ExpansionHeader_expansion_layout, expansionLayoutId);
                 toggleOnClick = a.getBoolean(R.styleable.ExpansionHeader_expansion_toggleOnClick, toggleOnClick);
