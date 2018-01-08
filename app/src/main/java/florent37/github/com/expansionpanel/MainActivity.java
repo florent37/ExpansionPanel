@@ -1,5 +1,6 @@
 package florent37.github.com.expansionpanel;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -18,100 +19,28 @@ import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.github.florent37.expansionpanel.ExpansionLayoutCollection;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 import static florent37.github.com.expansionpanel.Utils.dpToPx;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ViewGroup dynamicLayoutContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        dynamicLayoutContainer = (ViewGroup)findViewById(R.id.dynamicLayoutContainer);
-
-        final ExpansionLayout ex1 = addDynamicLayout();
-        final ExpansionLayout ex2 = addDynamicLayout();
-
-        final ExpansionLayoutCollection expansionLayoutCollection = new ExpansionLayoutCollection();
-        expansionLayoutCollection.add(ex1).add(ex2);
-        expansionLayoutCollection.openOnlyOne(true);
+        ButterKnife.bind(this);
     }
 
-    public ExpansionLayout addDynamicLayout() {
-
-        final ExpansionHeader expansionHeader = createExpansionHeader();
-        dynamicLayoutContainer.addView(expansionHeader, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-        final ExpansionLayout expansionLayout = createExpansionLayout();
-        dynamicLayoutContainer.addView(expansionLayout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
-        expansionHeader.setExpansionLayout(expansionLayout);
-
-        return expansionLayout;
-
+    @OnClick(R.id.sample)
+    public void onSampleClicked(){
+        startActivity(new Intent(this, SampleActivity.class));
     }
 
-    @NonNull
-    private ExpansionLayout createExpansionLayout() {
-        final ExpansionLayout expansionLayout = new ExpansionLayout(this);
-
-        final LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        expansionLayout.addView(layout, ViewGroup.LayoutParams.MATCH_PARENT, dpToPx(this, 48)); //equivalent to addView(linearLayout)
-
-        final TextView text = new TextView(this);
-        text.setText("Content");
-        text.setGravity(Gravity.CENTER);
-        text.setTextColor(Color.parseColor("#3E3E3E"));
-        text.setBackgroundColor(Color.parseColor("#EEEEEE"));
-        layout.addView(text, ViewGroup.LayoutParams.MATCH_PARENT, dpToPx(this, 200));
-
-        text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final View child = new View(MainActivity.this);
-                child.setBackgroundColor(Color.BLACK);
-                layout.addView(child, ViewGroup.LayoutParams.MATCH_PARENT, 100);
-            }
-        });
-
-        layout.addView(LayoutInflater.from(this).inflate(R.layout.sample_panel, layout, false));
-
-        return expansionLayout;
-    }
-
-    @NonNull
-    private ExpansionHeader createExpansionHeader() {
-        final ExpansionHeader expansionHeader = new ExpansionHeader(this);
-        expansionHeader.setBackgroundColor(Color.WHITE);
-
-        expansionHeader.setPadding(dpToPx(this, 16), dpToPx(this, 8), dpToPx(this, 16), dpToPx(this, 8));
-
-        final RelativeLayout layout = new RelativeLayout(this);
-        expansionHeader.addView(layout, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT); //equivalent to addView(linearLayout)
-
-        //image
-        final ImageView expansionIndicator = new AppCompatImageView(this);
-        expansionIndicator.setImageResource(R.drawable.ic_expansion_header_indicator_grey_24dp);
-        final RelativeLayout.LayoutParams imageLayoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        imageLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        imageLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-        layout.addView(expansionIndicator, imageLayoutParams);
-
-        //label
-        final TextView text = new TextView(this);
-        text.setText("Trip name");
-        text.setTextColor(Color.parseColor("#3E3E3E"));
-
-        final RelativeLayout.LayoutParams textLayoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        textLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
-        textLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-
-        layout.addView(text, textLayoutParams);
-
-        expansionHeader.setExpansionHeaderIndicator(expansionIndicator);
-        return expansionHeader;
+    @OnClick(R.id.recyclerView)
+    public void onRecyclerViewClicked(){
+        startActivity(new Intent(this, SampleActivityRecycler.class));
     }
 }
