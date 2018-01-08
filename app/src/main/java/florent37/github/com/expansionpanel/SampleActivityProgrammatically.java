@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
-import com.github.florent37.expansionpanel.ExpansionLayoutCollection;
+import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

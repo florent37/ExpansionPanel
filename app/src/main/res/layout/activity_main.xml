@@ -11,6 +11,12 @@
         android:id="@+id/sample"/>
 
     <Button
+        android:text="Sample ViewGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sample_viewgroup"/>
+
+    <Button
         android:text="Programmatically"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

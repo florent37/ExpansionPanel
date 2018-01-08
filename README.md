@@ -85,6 +85,8 @@ Use `.setEnable(true/false)` to enable/disable the expansion
 
 # Open only one
 
+[![screen](https://raw.githubusercontent.com/florent37/ExpansionPanel/master/medias/onlyone.gif)](https://www.github.com/florent37/ExpansionPanel)
+
 You can setup multiple expansions layout to enable only 1 opened at time
 
 ```
@@ -93,6 +95,24 @@ expansionLayoutCollection.add(ex1);
 expansionLayoutCollection.add(ex2);
 
 expansionLayoutCollection.openOnlyOne(true);
+```
+
+or direcly in xml with
+- ExpansionsViewGroupLinearLayout
+- ExpansionsViewGroupFrameLayout
+- ExpansionsViewGroupRelativeLayout
+- ExpansionsViewGroupConstraintLayout
+
+```
+<com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:expansion_openOnlyOne="true"
+                android:orientation="vertical">
+
+                <!-- Expansions Header & Layouts -->
+
+</com.github.florent37.expansionpanel.viewgroup.ExpansionsViewGroupLinearLayout>
 ```
 
 # Credits

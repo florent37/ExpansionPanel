@@ -1,4 +1,6 @@
-package com.github.florent37.expansionpanel;
+package com.github.florent37.expansionpanel.viewgroup;
+
+import com.github.florent37.expansionpanel.ExpansionLayout;
 
 import java.util.Collection;
 import java.util.HashSet;

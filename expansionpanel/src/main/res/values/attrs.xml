@@ -7,7 +7,23 @@
         <attr name="expansion_headerIndicatorRotationExpanded" format="reference"/>
         <attr name="expansion_headerIndicatorRotationCollapsed" format="reference"/>
     </declare-styleable>
+
     <declare-styleable name="ExpansionLayout">
         <attr name="expansion_expanded" format="boolean"/>
+    </declare-styleable>
+
+    <attr name="expansion_openOnlyOne" format="boolean"/>
+
+    <declare-styleable name="ExpansionsViewGroupFrameLayout">
+        <attr name="expansion_openOnlyOne"/>
+    </declare-styleable>
+    <declare-styleable name="ExpansionsViewGroupLinearLayout">
+        <attr name="expansion_openOnlyOne"/>
+    </declare-styleable>
+    <declare-styleable name="ExpansionsViewGroupRelativeLayout">
+        <attr name="expansion_openOnlyOne"/>
+    </declare-styleable>
+    <declare-styleable name="ExpansionsViewGroupConstraintLayout">
+        <attr name="expansion_openOnlyOne"/>
     </declare-styleable>
 </resources>

@@ -19,6 +19,7 @@
         <activity android:name=".SampleActivity" />
         <activity android:name=".SampleActivityRecycler" />
         <activity android:name=".SampleActivityProgrammatically" />
+        <activity android:name=".SampleActivityViewGroup" />
     </application>
 
 </manifest>
