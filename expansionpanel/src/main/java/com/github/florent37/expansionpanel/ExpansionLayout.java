@@ -237,8 +237,10 @@ public class ExpansionLayout extends NestedScrollView {
 
     private void setHeight(float height) {
         final ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        layoutParams.height = (int) height;
-        setLayoutParams(layoutParams);
+        if (layoutParams != null) {
+            layoutParams.height = (int) height;
+            setLayoutParams(layoutParams);
+        }
     }
 
     public void toggle(boolean animated) {
