@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SampleActivity.class));
     }
 
+    @OnClick(R.id.programmatically)
+    public void onProgrammaticallyClicked(){
+        startActivity(new Intent(this, SampleActivityProgrammatically.class));
+    }
+
     @OnClick(R.id.recyclerView)
     public void onRecyclerViewClicked(){
         startActivity(new Intent(this, SampleActivityRecycler.class));
