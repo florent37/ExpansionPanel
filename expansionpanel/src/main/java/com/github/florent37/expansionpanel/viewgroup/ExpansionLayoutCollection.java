@@ -13,7 +13,7 @@ public class ExpansionLayoutCollection {
     private final ExpansionLayout.IndicatorListener indicatorListener = new ExpansionLayout.IndicatorListener() {
         @Override
         public void onStartedExpand(ExpansionLayout expansionLayout, boolean willExpand) {
-            if(willExpand){
+            if(willExpand && openOnlyOne){
                 for (ExpansionLayout view : expansions) {
                     if(view != expansionLayout){
                         view.collapse(true);
