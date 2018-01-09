@@ -130,7 +130,7 @@ public class ExpansionLayout extends NestedScrollView {
 
                     //now we have a size
                     if (expanded) {
-                        expand(true);
+                        expand(false);
                     }
 
                     childView.addOnLayoutChangeListener(new OnLayoutChangeListener() {
