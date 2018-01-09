@@ -26,8 +26,8 @@ public class ExpansionHeader extends FrameLayout {
     ExpansionLayout expansionLayout;
     @Nullable
     Animator indicatorAnimator;
-    private int headerRotationExpanded = 90;
-    private int headerRotationCollapsed = 0;
+    private int headerRotationExpanded = 270;
+    private int headerRotationCollapsed = 90;
     private boolean expansionLayoutInitialised = false;
 
     public ExpansionHeader(@NonNull Context context) {
