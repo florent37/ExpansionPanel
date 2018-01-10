@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.github.florent37.expansionpanel.ExpansionLayout;
+import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +44,12 @@ public class SampleActivityRecycler extends AppCompatActivity {
 
         private final List<Object> list = new ArrayList<>();
 
+        private final ExpansionLayoutCollection expansionsCollection = new ExpansionLayoutCollection();
+
+        public RecyclerAdapter() {
+            expansionsCollection.openOnlyOne(true);
+        }
+
         @Override
         public RecyclerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return RecyclerHolder.buildFor(parent);
@@ -49,6 +58,8 @@ public class SampleActivityRecycler extends AppCompatActivity {
         @Override
         public void onBindViewHolder(RecyclerHolder holder, int position) {
             holder.bind(list.get(position));
+
+            expansionsCollection.add(holder.getExpansionLayout());
         }
 
         @Override
@@ -65,6 +76,9 @@ public class SampleActivityRecycler extends AppCompatActivity {
 
             private static final int LAYOUT = R.layout.recycler_cell;
 
+            @BindView(R.id.expansionLayout)
+            ExpansionLayout expansionLayout;
+
             public static RecyclerHolder buildFor(ViewGroup viewGroup){
                    return new RecyclerHolder(LayoutInflater.from(viewGroup.getContext()).inflate(LAYOUT, viewGroup, false));
              }
@@ -75,7 +89,11 @@ public class SampleActivityRecycler extends AppCompatActivity {
             }
 
             public void bind(Object object){
+                expansionLayout.collapse(false);
+            }
 
+            public ExpansionLayout getExpansionLayout() {
+                return expansionLayout;
             }
         }
     }
