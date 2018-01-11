@@ -173,11 +173,11 @@ public class ExpansionLayout extends NestedScrollView {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    expanded = false;
                     animator = null;
                     pingListeners();
                 }
             });
+            expanded = false;
             animator = valueAnimator;
             valueAnimator.start();
         } else {
@@ -221,11 +221,11 @@ public class ExpansionLayout extends NestedScrollView {
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
-                    expanded = true;
                     animator = null;
                     pingListeners();
                 }
             });
+            expanded = true;
             animator = valueAnimator;
             valueAnimator.start();
         } else {
