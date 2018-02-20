@@ -145,6 +145,7 @@ public class ExpansionHeader extends FrameLayout {
 
     //can be overriden
     protected void onExpansionModifyView(boolean willExpand) {
+        setSelected(willExpand);
         if (headerIndicator != null) {
             if (indicatorAnimator != null) {
                 indicatorAnimator.cancel();
