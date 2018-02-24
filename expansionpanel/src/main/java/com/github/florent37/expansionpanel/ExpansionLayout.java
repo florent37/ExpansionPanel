@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.NestedScrollView;
@@ -251,6 +253,29 @@ public class ExpansionLayout extends NestedScrollView {
         }
     }
 
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        final Bundle savedInstance = new Bundle();
+        savedInstance.putParcelable("super", super.onSaveInstanceState());
+        savedInstance.putBoolean("expanded", expanded);
+        return savedInstance;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if(state instanceof Bundle){
+            final Bundle savedInstance = (Bundle) state;
+            boolean expanded = savedInstance.getBoolean("expanded");
+            if(expanded){
+               expand(false);
+            } else {
+                collapse(false);
+            }
+            super.onRestoreInstanceState(savedInstance.getParcelable("super"));
+        } else {
+            super.onRestoreInstanceState(state);
+        }
+    }
 
     public boolean isExpanded() {
         return expanded;
