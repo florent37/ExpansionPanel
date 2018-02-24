@@ -6,6 +6,8 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -49,14 +51,22 @@ public class ExpansionHeader extends FrameLayout {
         if (attrs != null) {
             final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ExpansionHeader);
             if (a != null) {
-                headerRotationExpanded = a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationExpanded, headerRotationExpanded);
-                headerRotationCollapsed = a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationCollapsed, headerRotationCollapsed);
+                setHeaderRotationExpanded(a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationExpanded, headerRotationExpanded));
+                setHeaderRotationCollapsed(a.getInt(R.styleable.ExpansionHeader_expansion_headerIndicatorRotationCollapsed, headerRotationCollapsed));
                 setHeaderIndicatorId(a.getResourceId(R.styleable.ExpansionHeader_expansion_headerIndicator, headerIndicatorId));
                 setExpansionLayoutId(a.getResourceId(R.styleable.ExpansionHeader_expansion_layout, expansionLayoutId));
                 setToggleOnClick(a.getBoolean(R.styleable.ExpansionHeader_expansion_toggleOnClick, toggleOnClick));
                 a.recycle();
             }
         }
+    }
+
+    public void setHeaderRotationExpanded(int headerRotationExpanded) {
+        this.headerRotationExpanded = headerRotationExpanded;
+    }
+
+    public void setHeaderRotationCollapsed(int headerRotationCollapsed) {
+        this.headerRotationCollapsed = headerRotationCollapsed;
     }
 
     public boolean isToggleOnClick() {
@@ -166,6 +176,39 @@ public class ExpansionHeader extends FrameLayout {
             if (indicatorAnimator != null) {
                 indicatorAnimator.start();
             }
+        }
+    }
+
+    @Nullable
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        final Bundle savedInstance = new Bundle();
+        savedInstance.putParcelable("super", super.onSaveInstanceState());
+
+        savedInstance.putInt("headerIndicatorId", headerIndicatorId);
+        savedInstance.putInt("expansionLayoutId", expansionLayoutId);
+        savedInstance.putBoolean("toggleOnClick", toggleOnClick);
+        savedInstance.putInt("headerRotationExpanded", headerRotationExpanded);
+        savedInstance.putInt("headerRotationCollapsed", headerRotationCollapsed);
+
+        return savedInstance;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if(state instanceof Bundle) {
+            final Bundle savedInstance = new Bundle();
+
+            setHeaderIndicatorId(savedInstance.getInt("headerIndicatorId"));
+            setExpansionLayoutId(savedInstance.getInt("expansionLayoutId"));
+            setToggleOnClick(savedInstance.getBoolean("toggleOnClick"));
+            setHeaderRotationExpanded(savedInstance.getInt("headerRotationExpanded"));
+            setHeaderRotationCollapsed(savedInstance.getInt("headerRotationCollapsed"));
+            setup();
+
+            super.onRestoreInstanceState(savedInstance.getParcelable("super"));
+        } else {
+            super.onRestoreInstanceState(state);
         }
     }
 
