@@ -121,6 +121,7 @@ public class ExpansionHeader extends FrameLayout {
 
         setHeaderIndicatorId(this.headerIndicatorId); //setup or update
         setExpansionLayoutId(this.expansionLayoutId); //setup or update
+        setup();
     }
 
     private void setup() {
@@ -197,14 +198,16 @@ public class ExpansionHeader extends FrameLayout {
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         if(state instanceof Bundle) {
-            final Bundle savedInstance = new Bundle();
+            final Bundle savedInstance = (Bundle)state;
 
-            setHeaderIndicatorId(savedInstance.getInt("headerIndicatorId"));
-            setExpansionLayoutId(savedInstance.getInt("expansionLayoutId"));
+            headerIndicatorId = savedInstance.getInt("headerIndicatorId");
+            expansionLayoutId = savedInstance.getInt("expansionLayoutId");
             setToggleOnClick(savedInstance.getBoolean("toggleOnClick"));
             setHeaderRotationExpanded(savedInstance.getInt("headerRotationExpanded"));
             setHeaderRotationCollapsed(savedInstance.getInt("headerRotationCollapsed"));
-            setup();
+            //setup(); will wait to onAttachToWindow
+
+            expansionLayoutInitialised = false;
 
             super.onRestoreInstanceState(savedInstance.getParcelable("super"));
         } else {
