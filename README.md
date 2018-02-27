@@ -83,6 +83,20 @@ Layout can be toggled programmatically with `.toggle()`
 
 Use `.setEnable(true/false)` to enable/disable the expansion
 
+# Listener
+
+Just add a listener into ExpansionLayout (**not the header !**) to follow the expansion layout state
+
+```java
+ExpansionLayout expansionLayout = findViewById(...);
+expansionLayout.addListener(new ExpansionLayout.Listener() {
+    @Override
+    public void onExpansionChanged(ExpansionLayout expansionLayout, boolean expanded) {
+
+    }
+});
+```
+
 # Open only one
 
 [![screen](https://raw.githubusercontent.com/florent37/ExpansionPanel/master/medias/onlyone.gif)](https://www.github.com/florent37/ExpansionPanel)

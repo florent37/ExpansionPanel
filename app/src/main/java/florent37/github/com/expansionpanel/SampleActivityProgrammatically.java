@@ -37,6 +37,14 @@ public class SampleActivityProgrammatically extends AppCompatActivity {
         final ExpansionLayout ex1 = addDynamicLayout();
         final ExpansionLayout ex2 = addDynamicLayout();
 
+        //example of how to add a listener
+        ex1.addListener(new ExpansionLayout.Listener() {
+            @Override
+            public void onExpansionChanged(ExpansionLayout expansionLayout, boolean expanded) {
+
+            }
+        });
+
         final ExpansionLayoutCollection expansionLayoutCollection = new ExpansionLayoutCollection();
         expansionLayoutCollection.add(ex1).add(ex2);
         expansionLayoutCollection.openOnlyOne(true);
