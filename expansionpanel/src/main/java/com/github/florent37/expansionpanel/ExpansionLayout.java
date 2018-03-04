@@ -158,10 +158,9 @@ public class ExpansionLayout extends NestedScrollView {
     }
 
     public void collapse(boolean animated) {
-        if (!isEnabled()) {
+        if (!isEnabled() || !expanded) {
             return;
         }
-
         pingIndicatorListeners(false);
         if (animated) {
             final ValueAnimator valueAnimator = ValueAnimator.ofFloat(1f * getHeight(), 0f);
@@ -206,7 +205,7 @@ public class ExpansionLayout extends NestedScrollView {
     }
 
     public void expand(boolean animated) {
-        if (!isEnabled()) {
+        if (!isEnabled() || expanded) {
             return;
         }
 
