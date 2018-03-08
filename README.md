@@ -19,7 +19,7 @@ https://material.io/guidelines/components/expansion-panels.html#
 [ ![Download](https://api.bintray.com/packages/florent37/maven/expansionpanel/images/download.svg) ](https://bintray.com/florent37/maven/expansionpanel/_latestVersion)
 ```java
 dependencies {
-    compile 'com.github.florent37:expansionpanel:1.1.0'
+    compile 'com.github.florent37:expansionpanel:1.1.1'
 }
 ```
 
@@ -142,6 +142,29 @@ Simply use `HorizontalExpansionLayout` instead of `ExpansionLayout`
         <!-- CONTENT -->
 
 </com.github.florent37.expansionpanel.HorizontalExpansionLayout>
+```
+
+# RecyclerView
+
+Sample: https://github.com/florent37/ExpansionPanel/blob/master/app/src/main/java/florent37/github/com/expansionpanel/SampleActivityRecycler.java
+
+```java
+public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerHolder> {
+
+    ...
+
+    //add an ExpansionLayoutCollection to your recycler adapter
+    private final ExpansionLayoutCollection expansionsCollection = new ExpansionLayoutCollection();
+
+
+    @Override
+    public void onBindViewHolder(MyRecyclerHolder holder, int position) {
+        //bind your elements
+
+        //just add the ExpansionLayout (with findViewById) to the expansionsCollection
+        expansionsCollection.add(holder.getExpansionLayout());
+    }
+}
 ```
 
 # Credits

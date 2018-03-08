@@ -15,7 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExpansionHeader extends FrameLayout {
 
@@ -77,7 +79,7 @@ public class ExpansionHeader extends FrameLayout {
         this.toggleOnClick = toggleOnClick;
     }
 
-    public void setHeaderIndicatorId(int headerIndicatorId){
+    public void setHeaderIndicatorId(int headerIndicatorId) {
         this.headerIndicatorId = headerIndicatorId;
         if (headerIndicatorId != 0) {
             headerIndicator = findViewById(headerIndicatorId);
@@ -96,7 +98,7 @@ public class ExpansionHeader extends FrameLayout {
         setup();
     }
 
-    public void setExpansionLayout(@Nullable  ExpansionLayout expansionLayout) {
+    public void setExpansionLayout(@Nullable ExpansionLayout expansionLayout) {
         this.expansionLayout = expansionLayout;
         setup();
     }
@@ -108,7 +110,7 @@ public class ExpansionHeader extends FrameLayout {
             final ViewParent parent = getParent();
             if (parent instanceof ViewGroup) {
                 final View view = ((ViewGroup) parent).findViewById(expansionLayoutId);
-                if(view instanceof ExpansionLayout){
+                if (view instanceof ExpansionLayout) {
                     setExpansionLayout(((ExpansionLayout) view));
                 }
             }
@@ -180,6 +182,16 @@ public class ExpansionHeader extends FrameLayout {
         }
     }
 
+    public boolean isExpanded() {
+        return expansionLayout != null && expansionLayout.isExpanded();
+    }
+
+    public void addListener(ExpansionLayout.Listener listener) {
+        if (expansionLayout != null) {
+            expansionLayout.addListener(listener);
+        }
+    }
+
     @Nullable
     @Override
     protected Parcelable onSaveInstanceState() {
@@ -197,8 +209,8 @@ public class ExpansionHeader extends FrameLayout {
 
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        if(state instanceof Bundle) {
-            final Bundle savedInstance = (Bundle)state;
+        if (state instanceof Bundle) {
+            final Bundle savedInstance = (Bundle) state;
 
             headerIndicatorId = savedInstance.getInt("headerIndicatorId");
             expansionLayoutId = savedInstance.getInt("expansionLayoutId");

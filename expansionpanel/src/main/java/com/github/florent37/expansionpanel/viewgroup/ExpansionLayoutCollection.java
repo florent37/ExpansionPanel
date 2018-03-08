@@ -8,7 +8,7 @@ import java.util.HashSet;
 public class ExpansionLayoutCollection {
 
     private final Collection<ExpansionLayout> expansions = new HashSet<>();
-    private boolean openOnlyOne = false;
+    private boolean openOnlyOne = true;
 
     private final ExpansionLayout.IndicatorListener indicatorListener = new ExpansionLayout.IndicatorListener() {
         @Override
