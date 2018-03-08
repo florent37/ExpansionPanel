@@ -192,6 +192,12 @@ public class ExpansionHeader extends FrameLayout {
         }
     }
 
+    public void removeListener(ExpansionLayout.Listener listener) {
+        if (expansionLayout != null) {
+            expansionLayout.removeListener(listener);
+        }
+    }
+
     @Nullable
     @Override
     protected Parcelable onSaveInstanceState() {
