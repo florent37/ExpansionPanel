@@ -9,7 +9,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.0.1'
 
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -28,12 +28,12 @@ task clean(type: Delete) {
 }
 
 ext{
-    COMPILE_SDK=26
-    TARGET_SDK=26
+    COMPILE_SDK=27
+    TARGET_SDK=27
     MIN_SDK = 14
     sourceCompatibilityVersion = JavaVersion.VERSION_1_7
     targetCompatibilityVersion = JavaVersion.VERSION_1_7
-    supportVersion = "26.1.0"
+    supportVersion = "27.0.2"
 
     libraryVersion = "1.1.1"
 }

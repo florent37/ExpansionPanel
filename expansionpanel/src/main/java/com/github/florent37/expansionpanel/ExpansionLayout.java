@@ -151,7 +151,7 @@ public class ExpansionLayout extends NestedScrollView {
                         }
                     });
 
-                    return false;
+                    return true;
                 }
             });
         }
