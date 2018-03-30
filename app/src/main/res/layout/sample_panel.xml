@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120dp"
                 android:layout_width="wrap_content"
-                android:text="Carribean cuise"
+                android:text="Carribean cruise"
                 android:textColor="#AAA" />
 
             <android.support.v7.widget.AppCompatImageView
