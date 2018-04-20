@@ -17,7 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SampleActivityRecycler extends AppCompatActivity {
+public class ExpansionPanelSampleActivityRecycler extends AppCompatActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -25,7 +25,7 @@ public class SampleActivityRecycler extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_recycler);
+        setContentView(R.layout.expansion_panel_sample_recycler);
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -74,7 +74,7 @@ public class SampleActivityRecycler extends AppCompatActivity {
 
         public final static class RecyclerHolder extends RecyclerView.ViewHolder {
 
-            private static final int LAYOUT = R.layout.recycler_cell;
+            private static final int LAYOUT = R.layout.expansion_panel_recycler_cell;
 
             @BindView(R.id.expansionLayout)
             ExpansionLayout expansionLayout;

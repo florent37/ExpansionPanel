@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ExpansionPanelMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SampleActivity" />
-        <activity android:name=".SampleActivityRecycler" />
-        <activity android:name=".SampleActivityProgrammatically" />
-        <activity android:name=".SampleActivityViewGroup" />
+        <activity android:name=".ExpansionPanelSampleActivity" />
+        <activity android:name=".ExpansionPanelSampleActivityRecycler" />
+        <activity android:name=".ExpansionPanelSampleActivityProgrammatically" />
+        <activity android:name=".ExpansionPanelSampleActivityViewGroup" />
     </application>
 
 </manifest>

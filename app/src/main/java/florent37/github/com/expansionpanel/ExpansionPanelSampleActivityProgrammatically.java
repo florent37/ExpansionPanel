@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 
 import static florent37.github.com.expansionpanel.Utils.dpToPx;
 
-public class SampleActivityProgrammatically extends AppCompatActivity {
+public class ExpansionPanelSampleActivityProgrammatically extends AppCompatActivity {
 
     @BindView(R.id.dynamicLayoutContainer)
     ViewGroup dynamicLayoutContainer;
@@ -31,7 +31,7 @@ public class SampleActivityProgrammatically extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sample_programmatically);
+        setContentView(R.layout.expansion_panel_sample_programmatically);
         ButterKnife.bind(this);
 
         final ExpansionLayout ex1 = addDynamicLayout();
@@ -82,13 +82,13 @@ public class SampleActivityProgrammatically extends AppCompatActivity {
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final View child = new View(SampleActivityProgrammatically.this);
+                final View child = new View(ExpansionPanelSampleActivityProgrammatically.this);
                 child.setBackgroundColor(Color.BLACK);
                 layout.addView(child, ViewGroup.LayoutParams.MATCH_PARENT, 100);
             }
         });
 
-        layout.addView(LayoutInflater.from(this).inflate(R.layout.sample_panel, layout, false));
+        layout.addView(LayoutInflater.from(this).inflate(R.layout.expansion_panel_sample_panel, layout, false));
 
         return expansionLayout;
     }
