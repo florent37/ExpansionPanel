@@ -145,7 +145,7 @@ Simply use `HorizontalExpansionLayout` instead of `ExpansionLayout`
 
 # RecyclerView
 
-Sample: https://github.com/florent37/ExpansionPanel/blob/master/app/src/main/java/florent37/github/com/expansionpanel/SampleActivityRecycler.java
+Sample: https://github.com/florent37/ExpansionPanel/blob/master/app/src/main/java/florent37/github/com/expansionpanel/ExpansionPanelSampleActivityRecycler.java
 
 ```java
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerHolder> {
