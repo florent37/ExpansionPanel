@@ -45,7 +45,7 @@ dependencies {
 
         ...
         <!-- HEADER INDICATOR -->
-        <android.support.v7.widget.AppCompatImageView
+        <ImageView
                android:adjustViewBounds="true"
                android:id="@+id/headerIndicator"
                android:layout_gravity="center_vertical|right"
