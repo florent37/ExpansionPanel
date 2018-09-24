@@ -1,6 +1,8 @@
 # ExpansionPanel
 Expansion panels contain creation flows and allow lightweight editing of an element.
 
+*AndroidX Ready*
+
 Based on `Expansion Panels` described on Material Design Components 
 https://material.io/archive/guidelines/components/expansion-panels.html#
 
@@ -19,7 +21,7 @@ https://material.io/archive/guidelines/components/expansion-panels.html#
 [ ![Download](https://api.bintray.com/packages/florent37/maven/expansionpanel/images/download.svg) ](https://bintray.com/florent37/maven/expansionpanel/_latestVersion)
 ```java
 dependencies {
-    compile 'com.github.florent37:expansionpanel:1.1.1'
+    compile 'com.github.florent37:expansionpanel:1.2.0'
 }
 ```
 

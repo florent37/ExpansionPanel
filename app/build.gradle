@@ -17,13 +17,14 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:' + project.supportVersion
-    implementation 'com.android.support:cardview-v7:' + project.supportVersion
-    implementation 'com.android.support:recyclerview-v7:' + project.supportVersion
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
 
-    compile project(path: ':expansionpanel')
+    implementation project(path: ':expansionpanel')
 
-    compile 'com.jakewharton:butterknife:' + project.butterknife
+    implementation 'com.jakewharton:butterknife:' + project.butterknife
     annotationProcessor 'com.jakewharton:butterknife-compiler:' + project.butterknife
 
 }
