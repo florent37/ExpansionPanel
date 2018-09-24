@@ -1,7 +1,7 @@
 package florent37.github.com.expansionpanel;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 

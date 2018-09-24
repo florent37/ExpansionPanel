@@ -36,7 +36,7 @@
                 android:text="Carribean cruise"
                 android:textColor="#AAA" />
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:adjustViewBounds="true"
                 android:id="@+id/headerIndicator"
                 android:layout_alignParentRight="true"
