@@ -18,21 +18,18 @@ import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 import static florent37.github.com.expansionpanel.Utils.dpToPx;
 
 public class ExpansionPanelSampleActivityProgrammatically extends AppCompatActivity {
 
-    @BindView(R.id.dynamicLayoutContainer)
     ViewGroup dynamicLayoutContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.expansion_panel_sample_programmatically);
-        ButterKnife.bind(this);
+        this.dynamicLayoutContainer = findViewById(R.id.dynamicLayoutContainer);
 
         final ExpansionLayout ex1 = addDynamicLayout();
         final ExpansionLayout ex2 = addDynamicLayout();

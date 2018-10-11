@@ -23,8 +23,4 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
 
     implementation project(path: ':expansionpanel')
-
-    implementation 'com.jakewharton:butterknife:' + project.butterknife
-    annotationProcessor 'com.jakewharton:butterknife-compiler:' + project.butterknife
-
 }

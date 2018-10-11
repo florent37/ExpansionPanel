@@ -14,12 +14,8 @@ import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class ExpansionPanelSampleActivityRecycler extends AppCompatActivity {
 
-    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     @Override
@@ -76,16 +72,15 @@ public class ExpansionPanelSampleActivityRecycler extends AppCompatActivity {
 
             private static final int LAYOUT = R.layout.expansion_panel_recycler_cell;
 
-            @BindView(R.id.expansionLayout)
             ExpansionLayout expansionLayout;
 
             public static RecyclerHolder buildFor(ViewGroup viewGroup){
                    return new RecyclerHolder(LayoutInflater.from(viewGroup.getContext()).inflate(LAYOUT, viewGroup, false));
-             }
+            }
 
             public RecyclerHolder(View itemView) {
                 super(itemView);
-                ButterKnife.bind(this, itemView);
+                expansionLayout = itemView.findViewById(R.id.expansionLayout);
             }
 
             public void bind(Object object){
