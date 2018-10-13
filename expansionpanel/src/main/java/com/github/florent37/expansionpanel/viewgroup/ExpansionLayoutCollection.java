@@ -31,14 +31,18 @@ public class ExpansionLayoutCollection {
 
     public ExpansionLayoutCollection addAll(ExpansionLayout...expansionLayouts) {
         for (ExpansionLayout expansionLayout : expansionLayouts) {
-            add(expansionLayout);
+            if (expansionLayout!=null){
+                add(expansionLayout);
+            }
         }
         return this;
     }
 
     public ExpansionLayoutCollection addAll(Collection<ExpansionLayout> expansionLayouts) {
         for (ExpansionLayout expansionLayout : expansionLayouts) {
-            add(expansionLayout);
+            if (expansionLayout!=null){
+                add(expansionLayout);
+            }
         }
         return this;
     }
