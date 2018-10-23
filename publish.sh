@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-./gradlew clean assembleDebug install
-./gradlew bintrayUpload
+./gradlew expansionpanel:clean
+./gradlew expansionpanel:assembleDebug
+./gradlew expansionpanel:install
+./gradlew expansionpanel:bintrayUpload
