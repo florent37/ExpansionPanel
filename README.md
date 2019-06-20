@@ -21,7 +21,7 @@ https://material.io/archive/guidelines/components/expansion-panels.html#
 [ ![Download](https://api.bintray.com/packages/florent37/maven/expansionpanel/images/download.svg) ](https://bintray.com/florent37/maven/expansionpanel/_latestVersion)
 ```java
 dependencies {
-    compile 'com.github.florent37:expansionpanel:1.2.0'
+    compile 'com.github.florent37:expansionpanel:1.2.2'
 }
 ```
 
