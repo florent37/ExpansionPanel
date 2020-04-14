@@ -19,6 +19,8 @@ https://material.io/archive/guidelines/components/expansion-panels.html#
 
 Update gradle, add ability to have only one listener at time
 
+(For what? If you tried to debug ViewHolders with this layout, then you might notice that over time addListener continues to add a listener, which causes a lot of unnecessary listeners and, moreover, there can be many listeners to one layouts in different ViewHolders due to which it may cause logic breakdown)
+
 ```
 //Kotlin
 
