@@ -21,6 +21,7 @@ public class HorizontalExpansionLayout extends HorizontalScrollView {
 
     private final List<IndicatorListener> indicatorListeners = new ArrayList<>();
     private final List<Listener> listeners = new ArrayList<>();
+    public Boolean singleListener = false;
     private boolean expanded = false;
     private Animator animator;
 
@@ -52,8 +53,12 @@ public class HorizontalExpansionLayout extends HorizontalScrollView {
     }
 
     public void addListener(Listener listener) {
-        if (listener != null && !listeners.contains(listener))
+        if (singleListener) {
+            listeners.clear();
             listeners.add(listener);
+        } else if (listener != null && !listeners.contains(listener)) {
+            listeners.add(listener);
+        }
     }
 
     public void removeListener(Listener listener) {

@@ -14,6 +14,37 @@ https://material.io/archive/guidelines/components/expansion-panels.html#
 
 [![screen](https://raw.githubusercontent.com/florent37/ExpansionPanel/master/medias/video1.gif)](https://www.github.com/florent37/ExpansionPanel)
 
+
+# Differences from master 
+
+Update gradle, add ability to have only one listener at time
+
+(For what? If you tried to debug ViewHolders with this layout, then you might notice that over time addListener continues to add a listener, which causes a lot of unnecessary listeners and, moreover, there can be many listeners to one layouts in different ViewHolders due to which it may cause logic breakdown)
+
+```
+//Kotlin
+
+var isExpanded = false
+
+expandableLayout.run {
+    //expandableLayout.singleListener = true
+    singleListener = true
+
+    expandableLayout.addListener { expansionLayout, expanded ->
+        isExpanded = expanded
+    }
+
+    //do not toggle (expand/collapse, etc) before add listener
+
+    if (isExpanded)
+        expand(false)
+    else
+        collapse(false)
+}
+```
+
+If you want use this version, you should make AAR (google)
+
 # Download
 
 <a href='https://ko-fi.com/A160LCC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
