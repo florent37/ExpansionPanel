@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/ExpansionPanel.iml" filepath="$PROJECT_DIR$/ExpansionPanel.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/ExpansionPanel-app.iml" filepath="$PROJECT_DIR$/app/ExpansionPanel-app.iml" group="ExpansionPanel/app" />
       <module fileurl="file://$PROJECT_DIR$/expansionpanel/ExpansionPanel-expansionpanel.iml" filepath="$PROJECT_DIR$/expansionpanel/ExpansionPanel-expansionpanel.iml" group="ExpansionPanel/expansionpanel" />
+      <module fileurl="file://$PROJECT_DIR$/GitHub-ExpansionPanel.iml" filepath="$PROJECT_DIR$/GitHub-ExpansionPanel.iml" group="ExpansionPanel" />
+      <module fileurl="file://$PROJECT_DIR$/app/GitHub-ExpansionPanel-app.iml" filepath="$PROJECT_DIR$/app/GitHub-ExpansionPanel-app.iml" group="ExpansionPanel/app" />
+      <module fileurl="file://$PROJECT_DIR$/expansionpanel/GitHub-ExpansionPanel-expansionpanel.iml" filepath="$PROJECT_DIR$/expansionpanel/GitHub-ExpansionPanel-expansionpanel.iml" group="ExpansionPanel/expansionpanel" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/expansionpanel/expansionpanel.iml" filepath="$PROJECT_DIR$/expansionpanel/expansionpanel.iml" />
     </modules>
