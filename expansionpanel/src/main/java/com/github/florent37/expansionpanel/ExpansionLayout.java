@@ -163,10 +163,16 @@ public class ExpansionLayout extends NestedScrollView {
     }
 
     public void collapse(boolean animated) {
+        collapse(animated, true);
+    }
+
+    public void collapse(boolean animated, final boolean ping) {
         if (!isEnabled() || !expanded) {
             return;
         }
-        pingIndicatorListeners(false);
+        if (ping) {
+            pingIndicatorListeners(false);
+        }
         if (animated) {
             final ValueAnimator valueAnimator = ValueAnimator.ofFloat(1f * getHeight(), 0f);
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -180,7 +186,9 @@ public class ExpansionLayout extends NestedScrollView {
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
                     animator = null;
-                    pingListeners();
+                    if (ping) {
+                        pingListeners();
+                    }
                 }
             });
             expanded = false;
@@ -189,7 +197,9 @@ public class ExpansionLayout extends NestedScrollView {
         } else {
             setHeight(0f);
             expanded = false;
-            pingListeners();
+            if (ping) {
+                pingListeners();
+            }
         }
     }
 
@@ -210,11 +220,17 @@ public class ExpansionLayout extends NestedScrollView {
     }
 
     public void expand(boolean animated) {
+        expand(animated, true);
+    }
+
+    public void expand(boolean animated, final boolean ping) {
         if (!isEnabled() || expanded) {
             return;
         }
 
-        pingIndicatorListeners(true);
+        if (ping) {
+            pingIndicatorListeners(true);
+        }
         if (animated) {
             final ValueAnimator valueAnimator = ValueAnimator.ofFloat(0f, getChildAt(0).getHeight());
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -228,7 +244,9 @@ public class ExpansionLayout extends NestedScrollView {
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
                     animator = null;
-                    pingListeners();
+                    if (ping) {
+                        pingListeners();
+                    }
                 }
             });
             expanded = true;
@@ -237,7 +255,9 @@ public class ExpansionLayout extends NestedScrollView {
         } else {
             setHeight(getChildAt(0).getHeight());
             expanded = true;
-            pingListeners();
+            if (ping) {
+                pingListeners();
+            }
         }
     }
 
@@ -249,11 +269,15 @@ public class ExpansionLayout extends NestedScrollView {
         }
     }
 
-    public void toggle(boolean animated) {
+    public void toggle(boolean animate) {
+        toggle(animate, true);
+    }
+
+    public void toggle(boolean animated, boolean notify) {
         if (expanded) {
-            collapse(animated);
+            collapse(animated, notify);
         } else {
-            expand(animated);
+            expand(animated, notify);
         }
     }
 
